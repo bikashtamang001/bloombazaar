@@ -5,7 +5,7 @@ require './includes/conn.php';
 require "./includes/head.php";
 
 if (!isset($_SESSION['email'])) {
-  echo "<script> location.href='/nursery_online'; </script>";
+  echo "<script> location.href='/bloom-bazaar'; </script>";
   exit();
 }
 ?>
