@@ -5,7 +5,7 @@ session_start();
 require "./includes/head.php";
 
 // if(!isset($_SESSION['email'])){
-//     echo "<script> location.href='/nursery_online'; </script>";
+//     echo "<script> location.href='/bloom-bazaar'; </script>";
 //     exit();
 // }
 ?>
@@ -94,7 +94,7 @@ while ($row = mysqli_fetch_array($result)) {
                             </ul>
                         </div>
                     </aside>
-                    <aside class="left_widgets p_filter_widgets price_rangs_aside">
+                    <!-- <aside class="left_widgets p_filter_widgets price_rangs_aside">
                         <div class="l_w_title">
                             <h3>Price Filter</h3>
                         </div>
@@ -113,7 +113,7 @@ while ($row = mysqli_fetch_array($result)) {
                                 </div>
                             </div>
                         </div>
-                    </aside>
+                    </aside> -->
                 </div>
             </div>
             <div class="col-lg-9">
@@ -126,21 +126,12 @@ while ($row = mysqli_fetch_array($result)) {
                             <div class="single_product_menu d-flex">
                                 <h5>sort by :</h5>
                                 <select>
-                                    <option data-display="Select">name</option>
-                                    <option value="1">price</option>
-                                    <option value="2">product</option>
+                                    <option data-display="Recent">Recent</option>
+                                    <option value="1">Price</option>
+                                    <option value="2">Name</option>
                                 </select>
                             </div>
-                            <div class="single_product_menu d-flex">
-                                <h5>show :</h5>
-                                <div class="top_pageniation">
-                                    <ul>
-                                        <li>1</li>
-                                        <li>2</li>
-                                        <li>3</li>
-                                    </ul>
-                                </div>
-                            </div>
+
                             <div class="single_product_menu d-flex">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="search" aria-describedby="inputGroupPrepend" />
@@ -154,11 +145,24 @@ while ($row = mysqli_fetch_array($result)) {
                 </div>
                 <div class="row align-items-center latest_product_inner">
 
-                <?php
-                    $result = mysqli_query($con, $query);
 
-                    while ($row = mysqli_fetch_array($result)) {
-                        echo '<div class="col-lg-4 col-sm-6">
+
+                <?php
+                $results_per_page = 9; // Adjust the number of products per page as needed
+
+                // Determine the current page
+                $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+                // Calculate the starting index for the results on the current page
+                $start_index = ($page - 1) * $results_per_page;
+
+                // Update your query to limit the results based on pagination parameters
+                $query = "SELECT * FROM `products` LIMIT $start_index, $results_per_page";
+
+                $result = mysqli_query($con, $query);
+
+                while ($row = mysqli_fetch_array($result)) {
+                    echo '<div class="col-lg-4 col-sm-6">
                                 <div class="single_product_item">
                                     <img width="200px" src="img/product/'.$row['image'].'" alt="djwij" />
                                     <div class="single_product_text">
@@ -173,7 +177,22 @@ while ($row = mysqli_fetch_array($result)) {
                                   echo ' </div>
                                 </div>
                             </div>';
-                    }
+                }
+                ?>
+
+                <?php
+                // Count the total number of products (useful for pagination)
+                $total_results = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `products`"));
+
+                // Calculate the total number of pages
+                $total_pages = ceil($total_results / $results_per_page);
+
+                // Display pagination links
+                echo '<div class="pagination">';
+                for ($i = 1; $i <= $total_pages; $i++) {
+                    echo '<a href="?page=' . $i . '">' . $i . '</a>';
+                }
+                echo '</div>';
                 ?>
                     <!-- <div class="col-lg-12">
                         <div class="pageination">
@@ -181,7 +200,7 @@ while ($row = mysqli_fetch_array($result)) {
                                 <ul class="pagination justify-content-center">
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Previous">
-                                            <i class="ti-angle-double-left"></i>
+                                            <<
                                         </a>
                                     </li>
                                     <li class="page-item">
@@ -204,7 +223,7 @@ while ($row = mysqli_fetch_array($result)) {
                                     </li>
                                     <li class="page-item">
                                         <a class="page-link" href="#" aria-label="Next">
-                                            <i class="ti-angle-double-right"></i>
+                                            >>
                                         </a>
                                     </li>
                                 </ul>

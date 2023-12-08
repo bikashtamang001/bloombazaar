@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Shop freely</title>
     <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/pagination.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
