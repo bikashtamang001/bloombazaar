@@ -171,14 +171,44 @@ while ($row = mysqli_fetch_array($result)) {
                     // Calculate the total number of pages
                     $total_pages = ceil($total_results / $results_per_page);
 
+                    // Get the current page from the URL parameter, default to 1 if not set
+                    $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
                     // Display pagination links
-                
                     echo '<div class="pagination">';
-                    for ($i = 1; $i <= $total_pages; $i++) {
-                        echo '<a href="?page=' . $i . '">' . $i . '</a>';
+
+                    // "First" button
+                    if ($current_page > 1) {
+                        echo '<a href="?page=1">First</a>';
                     }
+
+                    // "Previous" button
+                    if ($current_page > 1) {
+                        $prev_page = $current_page - 1;
+                        echo '<a href="?page=' . $prev_page . '">Previous</a>';
+                    }
+
+                    // Numbered pages
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        // Add a class to the current page link
+                        $class = ($i === $current_page) ? 'current' : '';
+                        echo '<a href="?page=' . $i . '" class="' . $class . '">' . $i . '</a>';
+                    }
+
+                    // "Next" button
+                    if ($current_page < $total_pages) {
+                        $next_page = $current_page + 1;
+                        echo '<a href="?page=' . $next_page . '">Next</a>';
+                    }
+
+                    // "Last" button
+                    if ($current_page < $total_pages) {
+                        echo '<a href="?page=' . $total_pages . '">Last</a>';
+                    }
+
                     echo '</div>';
-                    ?>
+                ?>
+
             </div>
         </div>
     </div>
