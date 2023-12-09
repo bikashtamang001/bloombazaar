@@ -179,13 +179,13 @@ while ($row = mysqli_fetch_array($result)) {
 
                     // "First" button
                     if ($current_page > 1) {
-                        echo '<a href="?page=1">First</a>';
+                        echo '<a href="?page=1">&lt&lt</a>';
                     }
 
                     // "Previous" button
                     if ($current_page > 1) {
                         $prev_page = $current_page - 1;
-                        echo '<a href="?page=' . $prev_page . '">Previous</a>';
+                        echo '<a href="?page=' . $prev_page . '">&lt</a>';
                     }
 
                     // Numbered pages
@@ -198,12 +198,12 @@ while ($row = mysqli_fetch_array($result)) {
                     // "Next" button
                     if ($current_page < $total_pages) {
                         $next_page = $current_page + 1;
-                        echo '<a href="?page=' . $next_page . '">Next</a>';
+                        echo '<a href="?page=' . $next_page . '">&gt</a>';
                     }
 
                     // "Last" button
                     if ($current_page < $total_pages) {
-                        echo '<a href="?page=' . $total_pages . '">Last</a>';
+                        echo '<a href="?page=' . $total_pages . '">&gt&gt</a>';
                     }
 
                     echo '</div>';
