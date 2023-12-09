@@ -94,26 +94,7 @@ while ($row = mysqli_fetch_array($result)) {
                             </ul>
                         </div>
                     </aside>
-                    <!-- <aside class="left_widgets p_filter_widgets price_rangs_aside">
-                        <div class="l_w_title">
-                            <h3>Price Filter</h3>
-                        </div>
-                        <div class="widgets_inner">
-                            <div class="range_item">
-                                <input type="text" class="js-range-slider" value="" />
-                                <div class="d-flex">
-                                    <div class="price_text">
-                                        <p>Price :</p>
-                                    </div>
-                                    <div class="price_value d-flex justify-content-center">
-                                        <input type="text" class="js-input-from" id="amount" readonly />
-                                        <span>to</span>
-                                        <input type="text" class="js-input-to" id="amount" readonly />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </aside> -->
+                    
                 </div>
             </div>
             <div class="col-lg-9">
@@ -147,90 +128,57 @@ while ($row = mysqli_fetch_array($result)) {
 
 
 
-                <?php
-                $results_per_page = 9; // Adjust the number of products per page as needed
+                    <?php
+                    $results_per_page = 9; // Adjust the number of products per page as needed
 
-                // Determine the current page
-                $page = isset($_GET['page']) ? $_GET['page'] : 1;
+                    // Determine the current page
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
 
-                // Calculate the starting index for the results on the current page
-                $start_index = ($page - 1) * $results_per_page;
+                    // Calculate the starting index for the results on the current page
+                    $start_index = ($page - 1) * $results_per_page;
 
-                // Update your query to limit the results based on pagination parameters
-                $query = "SELECT * FROM `products` LIMIT $start_index, $results_per_page";
+                    // Update your query to limit the results based on pagination parameters
+                    $query = "SELECT * FROM `products` LIMIT $start_index, $results_per_page";
 
-                $result = mysqli_query($con, $query);
+                    $result = mysqli_query($con, $query);
 
-                while ($row = mysqli_fetch_array($result)) {
-                    echo '<div class="col-lg-4 col-sm-6">
-                                <div class="single_product_item">
-                                    <img width="200px" src="img/product/'.$row['image'].'" alt="djwij" />
-                                    <div class="single_product_text">
-                                        <h4>'. $row['title'] .'</h4>
-                                        <h3>Rs. '. $row['price'] .'</h3>';
-                                        if(!check_if_added_to_cart($row['id'])){
-                                           echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
-                                        } else {
-                                            echo '<a href="#" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
-                                        }
-                                       
-                                  echo ' </div>
-                                </div>
-                            </div>';
-                }
-                ?>
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo '<div class="col-lg-4 col-sm-6">
+                                    <div class="single_product_item">
+                                        <img width="200px" src="img/product/'.$row['image'].'" alt="djwij" />
+                                        <div class="single_product_text">
+                                            <h4>'. $row['title'] .'</h4>
+                                            <h3>Rs. '. $row['price'] .'</h3>';
+                                            if(!check_if_added_to_cart($row['id'])){
+                                            echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
+                                            } else {
+                                                echo '<a href="#" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
+                                            }
+                                        
+                                    echo ' </div>
+                                    </div>
+                                </div>';
+                    }
+                    ?>
 
-                <?php
-                // Count the total number of products (useful for pagination)
-                $total_results = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `products`"));
-
-                // Calculate the total number of pages
-                $total_pages = ceil($total_results / $results_per_page);
-
-                // Display pagination links
-                echo '<div class="pagination">';
-                for ($i = 1; $i <= $total_pages; $i++) {
-                    echo '<a href="?page=' . $i . '">' . $i . '</a>';
-                }
-                echo '</div>';
-                ?>
-                    <!-- <div class="col-lg-12">
-                        <div class="pageination">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <<
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">6</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            >>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div> -->
+                    
+                
                 </div>
+                <?php
+                    // Count the total number of products (useful for pagination)
+                    $total_results = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `products`"));
+
+                    // Calculate the total number of pages
+                    $total_pages = ceil($total_results / $results_per_page);
+
+                    // Display pagination links
+                
+                    echo '<div class="pagination">';
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        echo '<a href="?page=' . $i . '">' . $i . '</a>';
+                    }
+                    echo '</div>';
+                    ?>
             </div>
         </div>
     </div>
