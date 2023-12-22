@@ -152,7 +152,7 @@ while ($row = mysqli_fetch_array($result)) {
                                             if(!check_if_added_to_cart($row['id'])){
                                             echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
                                             } else {
-                                                echo '<a href="#" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
+                                                echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
                                             }
                                         
                                     echo ' </div>
