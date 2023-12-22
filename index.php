@@ -80,7 +80,7 @@ session_start();
 		<div class="row justify-content-center">
 			<div class="col-lg-12">
 				<div class="section_tittle text-center">
-					<h2>Awesome <span>Shop</span></h2>
+					<h2>Today's special</h2>
 				</div>
 			</div>
 		</div>

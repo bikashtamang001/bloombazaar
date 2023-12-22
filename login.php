@@ -45,10 +45,10 @@
                             </h3>
                             <form class="row contact_form" action="scripts/login_script.php" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="email" name="email" value="" placeholder="Email" />
+                                    <input type="text" class="form-control" id="email" name="email" value="" placeholder="Email" required/>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" />
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required />
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
