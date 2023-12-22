@@ -196,19 +196,26 @@ session_start();
 
 <?php require "./includes/footer.php" ?>
 
+<!-- Include jQuery library -->
 <script src="js/jquery-1.12.1.min.js"></script>
 
+<!-- Include Popper.js library -->
 <script src="js/popper.min.js"></script>
 
+<!-- Bootstrap.js library -->
 <script src="js/bootstrap.min.js"></script>
 
+<!-- Include Magnific popup library -->
 <script src="js/jquery.magnific-popup.js"></script>
 
+<!-- For carousel -->
 <script src="js/swiper.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
 
+<!-- For grid layout -->
 <script src="js/masonry.pkgd.js"></script>
 
-<script src="js/owl.carousel.min.js"></script>
+
 <script src="js/jquery.nice-select.min.js"></script>
 
 <script src="js/slick.min.js"></script>
@@ -221,6 +228,17 @@ session_start();
 <script src="js/mail-script.js"></script>
 
 <script src="js/custom.js"></script>
+
+<script src="js/sweetalert2.all.min.js">
+	</script>
+	<script>
+		Swal.fire({
+			title: "Good job!",
+			text: "You clicked the button!",
+			icon: "success"
+		});
+
+	</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>

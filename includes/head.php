@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="css/themify-icons.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/price_rangs.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'/>
 </head>
 
 <body>
