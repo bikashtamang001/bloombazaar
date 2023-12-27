@@ -43,44 +43,7 @@ if (!isset($_SESSION['email'])) {
     <div class="billing_details">
       <div class="row">
         <form class="row contact_form" action="confirmation.php" method="post" novalidate="novalidate">
-          <div class="col-lg-8">
-            <h3>Billing/Shipping Details</h3>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="first" name="name" />
-              <span class="placeholder" data-placeholder="First name"></span>
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="last" name="name" />
-              <span class="placeholder" data-placeholder="Last name"></span>
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="number" name="number" />
-              <span class="placeholder" data-placeholder="Phone number"></span>
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="email" name="compemailany" />
-              <span class="placeholder" data-placeholder="Email Address"></span>
-            </div>
-            <div class="col-md-8 form-group p_star">
-              <input type="text" class="form-control" id="add1" name="add1" />
-              <span class="placeholder" data-placeholder="Address line 01"></span>
-            </div>
-            <div class="col-md-8 form-group p_star">
-              <input type="text" class="form-control" id="add2" name="add2" />
-              <span class="placeholder" data-placeholder="Address line 02"></span>
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="city" name="city" placeholder="Town/City" />
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="district" name="district" placeholder="District" />
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="zip" name="zip" placeholder="Postcode/ZIP" />
-            </div>
-            <div class="col-md-4 form-group p_star">
-              <input type="text" class="form-control" id="country" name="country" placeholder="Country" />
-            </div>
+          
 
           </div>
           <div class="col-lg-4">
