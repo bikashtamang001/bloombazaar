@@ -13,9 +13,15 @@ $query="SELECT id,email,password from users where email='".$email."' and  passwo
 $result=mysqli_query($con,$query);
 $num=mysqli_num_rows($result);
 if($num==0){
-    $m = "Please enter correct E-mail id and Password";
-    header('location: index.php?errorl='.$m);
-}else{
+    $m = "Please enter valid E-mail id and Password";
+    echo '<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      alert("'.$m.'");
+      window.location.href = "../login.php";
+    });
+    </script>';
+}
+else{
     $row = mysqli_fetch_array($result);
     $_SESSION['email'] = $row['email'];
     $_SESSION['user_id'] = $row['id'];

@@ -31,7 +31,7 @@
                         <div class="login_part_text_iner">
                             <h2>New to our Shop?</h2>
                             <p>
-                                There are advances being made in science and technology everyday, and a good example of this is the
+                                Welcome to Bloom Bazaar! Create an account to get served
                             </p>
                             <a href="register.php" class="btn_3">Create an Account</a>
                         </div>
@@ -45,20 +45,16 @@
                             </h3>
                             <form class="row contact_form" action="scripts/login_script.php" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="email" name="email" value="" placeholder="Email" required/>
+                                    <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email"/>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password" required />
+                                    <input type="password" class="form-control" required id="password" name="password" value="" placeholder="Password"/>
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <div class="creat_account d-flex align-items-center">
-                                        <input type="checkbox" id="f-option" name="selector" />
-                                        <label for="f-option">Remember me</label>
-                                    </div>
+                                    
                                     <button type="submit" value="submit" class="btn_3">
 											log in
-										</button>
-                                    <a class="lost_pass" href="#">forgot password?</a>
+									</button>
                                 </div>
                             </form>
                         </div>
@@ -89,6 +85,7 @@
     <script src="js/stellar.js"></script>
     <script src="js/price_rangs.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
     <script>

@@ -31,7 +31,7 @@
                         <div class="login_part_text_iner">
                             <h2>Already a User</h2>
                             <p>
-                                There are advances being made in science and technology everyday, and a good example of this is the
+                                Welcome to Bloom Bazaar! Login to get accessed.
                             </p>
                             <a href="login.php" class="btn_3">Login now</a>
                         </div>
@@ -61,9 +61,9 @@
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <button type="submit" value="submit" class="btn_3">
-											log in
+											Sign up and Login
 										</button>
-                                    <a class="lost_pass" href="#">forget password?</a>
+                                    
                                 </div>
                             </form>
                         </div>

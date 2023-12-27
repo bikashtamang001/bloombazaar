@@ -24,7 +24,12 @@ $num = mysqli_num_rows($result);
 if ($num != 0) {
 
     $m = "Email Already Exists";
-    header('location: index.php?error=' . $m);
+    echo '<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              alert("'.$m.'");
+              window.location.href = "../register.php"; // Redirect to the same page
+            });
+          </script>';
 
 } else {
     $quer = "INSERT INTO users(email_id,first_name,last_name,password) values('$email','$first','$last','$pass')";
