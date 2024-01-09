@@ -229,17 +229,6 @@ session_start();
 
 <script src="js/custom.js"></script>
 
-<script src="js/sweetalert2.all.min.js">
-	</script>
-<script>
-		Swal.fire({
-			title: "Good job!",
-			text: "You clicked the button!",
-			icon: "success"
-		});
-
-</script>
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
