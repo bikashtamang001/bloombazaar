@@ -10,7 +10,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            All rights reserved |  <a href="bloom-bazaar" target="">BloomBazaar</a>
+                            All rights reserved |  <a href="\bloom-bazaar" target="">BloomBazaar</a>
                         </p>
                     </div>
                 </div>
@@ -18,13 +18,13 @@
                     <div class="footer_icon social_icon">
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/didibaininursery" class="single_social_icon"><i class="fab fa-facebook-f"></i></a>
                             </li>
                             <li>
                                 <a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a>
+                                <a href="https://didi-baini-nursery.business.site/" class="single_social_icon"><i class="fas fa-globe"></i></a>
                             </li>
                         </ul>
                     </div>
