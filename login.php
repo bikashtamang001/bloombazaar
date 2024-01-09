@@ -43,12 +43,12 @@
                             <h3>
                                 Welcome Back ! <br /> Please Sign in now
                             </h3>
-                            <form class="row contact_form" action="scripts/login_script.php" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="scripts/login_script.php" method="post">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email"/>
+                                    <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email Address" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" required id="password" name="password" value="" placeholder="Password"/>
+                                    <input type="password" class="form-control" required id="password" name="password" value="" placeholder="Password" />
                                 </div>
                                 <div class="col-md-12 form-group">
                                     
@@ -83,7 +83,6 @@
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/stellar.js"></script>
-    <script src="js/price_rangs.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/sweetalert2.all.min.js"></script>
 

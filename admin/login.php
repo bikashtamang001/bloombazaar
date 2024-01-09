@@ -23,7 +23,7 @@ if(isset($_SESSION['admin_email'])){
         <div class="container col-md-3 my-4">
             <form class="row g-3" action="scripts/login_script.php" method="POST">
                 <div class="col-md-12">
-                    <label for="eamil" class="form-label">Email</label>
+                    <label for="email" class="form-label">Email</label>
                     <input type="text" name="email" class="form-control" id="email">
                 </div>
                 <div class="col-md-12">
