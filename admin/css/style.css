@@ -80,3 +80,11 @@ div.content {
         float: none;
     }
 }
+
+.error-message {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 10px; /* Add padding for better visual appearance */
+    margin-top: 10px; /* Adjust as needed */
+}

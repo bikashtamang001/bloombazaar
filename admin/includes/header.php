@@ -28,18 +28,17 @@
                         <?php
 
                         if(isset($_SESSION['admin_email'])){
-                            echo    '<li class="nav-item">
-                                        <a class="nav-link" href="scripts/logout_script.php"><button type="button" class="btn btn-primary">
-                                            Logout</button> 
-                                        </a>
-                                    </li>';
+                            echo '<li class="nav-item">
+        <a class="nav-link" href="#" onclick="confirmLogout()">
+            <button type="button" class="btn btn-primary">Logout</button>
+        </a>
+      </li>';
+
                         } else {
                             echo '<li class="nav-item">
                                 <a class="nav-link active" href="login.php"><button type="button" class="btn btn-primary">Login</button></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="register.php"><button type="button" class="btn btn-primary">Sign Up</button></a>
                             </li>';
+
                         }
                         ?>
                     </ul>
@@ -47,9 +46,15 @@
             </div>
         </div>
     </nav>
-    <!-- 
-    <div class="sidebar">
-        <a class="active" href="/bloom-bazaar-website/admin">Home</a>
-        <a href="product.php">Product Master</a>
-        <a href="order.php">Oredr Master</a>
-    </div> -->
+ 
+</body>
+<script>
+    function confirmLogout() {
+        var result = confirm("Are you sure you want to log out?");
+        if (result) {
+            // If the user clicks "OK" in the confirmation dialog, proceed with the logout
+            window.location.href = 'scripts/logout_script.php';
+        }
+    }
+</script>
+

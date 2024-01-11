@@ -21,7 +21,7 @@ $num = mysqli_num_rows($result);
 if ($num != 0) {
 
     $m = "Email Already Exists";
-    header('location: index.php?error=' . $m);
+    header('location: /admin/login.php?error=' . $m);
 
 } else {
     $quer = "INSERT INTO `admin`(`name`, `mobile`, `email`, `password`) VALUES ('$name','$mobile','$email','$pass')";

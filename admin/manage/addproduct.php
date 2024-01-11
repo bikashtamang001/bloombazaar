@@ -17,7 +17,8 @@
     
 
     if(mysqli_query($conn, $query)){
-        echo "inserted";
+        $_SESSION['message'] = "Data inserted successfully";
         header("Location: ../products.php");
+        exit(); // Make sure to exit after redirection to prevent further execution
     }
 ?>

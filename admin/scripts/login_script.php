@@ -12,9 +12,10 @@ $password=md5($password);
 $query="SELECT id,email,password from admin where email='".$email."' and  password='".$password."'";
 $result=mysqli_query($conn,$query);
 $num=mysqli_num_rows($result);
-if($num==0){
-    $m = "Please enter correct E-mail id and Password";
-    header('location: index.php?errorl='.$m);
+if ($num == 0) {
+    $_SESSION['error_message'] = "Please enter correct E-mail id and Password";
+    header('Location: ../login.php');
+    exit();
 }else{
     $row = mysqli_fetch_array($result);
     $_SESSION['admin_email'] = $row['email'];

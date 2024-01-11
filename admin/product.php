@@ -28,7 +28,7 @@ require "includes/header.php";
             <form class="row g-3" action="manage/addproduct.php" method="POST">
                 <div class="col-md-6">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" name="title" class="form-control" id="title">
+                    <input type="text" name="title" class="form-control" id="title" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="category">State</label>
@@ -48,15 +48,15 @@ require "includes/header.php";
                 </div>
                 <div class="col-md-6">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" name="price" class="form-control" id="price">
+                    <input type="number" name="price" class="form-control" id="price" required>
                 </div>
                 <div class="col-md-6">
                     <label for="qty" class="form-label">Quantity</label>
-                    <input type="number" name="qty" class="form-control" id="qty">
+                    <input type="number" name="qty" class="form-control" id="qty" required>
                 </div>
                 <div class="col-md-6">
                     <label for="image" class="form-label">Image</label>
-                    <input type="file" name="image" class="form-control" id="image">
+                    <input type="file" name="image" class="form-control" id="image" required>
                 </div>
                 <div class="col-md-6">
                     <label for="desc" class="form-label">Description</label>

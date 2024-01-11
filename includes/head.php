@@ -49,6 +49,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about_us.php">About us</a>
+                                </li>
+
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
