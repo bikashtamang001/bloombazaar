@@ -40,7 +40,7 @@ session_start();
 										<p>
 											Choose among wide variety of indoor plants.
 										</p>
-										<a href="#" class="btn_2">Buy now</a>
+										<a href="./login.php" class="btn_2">Buy now</a>
 									</div>
 								</div>
 							</div>
@@ -58,7 +58,7 @@ session_start();
 										<p>
 											Eco-Friendly, Pocket-Friendly.
 										</p>
-										<a href="#" class="btn_2">Buy now</a>
+										<a href="./login.php" class="btn_2">Buy now</a>
 									</div>
 								</div>
 							</div>
@@ -104,7 +104,7 @@ session_start();
 												if(!check_if_added_to_cart($row['id'])){
 												echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
 												} else {
-													echo '<a href="#" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
+													echo '<a href="./login.php" class="add_cart" disabled>+ add to cart<i class="ti-heart"></i></a>';
 												}
 											
 										echo ' </div>

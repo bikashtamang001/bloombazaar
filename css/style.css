@@ -233,6 +233,14 @@ img {
     max-width: 100%;
 }
 
+.error-message {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 10px; /* Add padding for better visual appearance */
+    margin-top: 10px; /* Adjust as needed */
+}
+
 
 /* line 153, ../../01 cl html template/0/188_bloom_bazaar_html/sass/_common.scss */
 
@@ -8154,8 +8162,9 @@ h6 {
 /* line 10, ../../01 cl html template/0/188_bloom_bazaar_html/sass/_breadcrumb.scss */
 
 .breadcrumb .breadcrumb_iner {
-    height: 475px;
+    height: 200px;
     width: 100%;
+    padding-bottom: 4%;
     display: table;
 }
 
@@ -8164,7 +8173,7 @@ h6 {
 
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item {
     display: table-cell;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 

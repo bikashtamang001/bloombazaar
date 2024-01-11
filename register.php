@@ -44,6 +44,15 @@
                                 Welcome to Our Store ! <br /> Please Sign Up now
                             </h3>
                             <form class="row contact_form" action="scripts/signup_script.php" method="post">
+                            <div class="col-md-12">
+                <?php
+    if (isset($_SESSION['error_message'])) {
+        echo '<p class="error-message">' . $_SESSION['error_message'] . '</p>';
+        unset($_SESSION['error_message']);  // Clear the error message after displaying
+    }
+    ?>
+    </div>
+                            
                                 <div class="col-md-6 form-group p_star">
                                     <input type="text" class="form-control" required id="fname" name="fname" value="" placeholder="First Name" />
                                 </div>
@@ -55,6 +64,9 @@
                                 </div>
                                 <div class="col-md-12 form-group p_star">
                                     <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email Address" />
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" required id="text" name="text" value="" placeholder="Full Address" />
                                 </div>
                                 <div class="col-md-12 form-group p_star">
                                     <input type="password" class="form-control" required id="password" name="password" value="" placeholder="Password" />

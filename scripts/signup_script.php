@@ -23,13 +23,9 @@ $result = mysqli_query($con, $query);
 $num = mysqli_num_rows($result);
 if ($num != 0) {
 
-    $m = "Email Already Exists";
-    echo '<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              alert("'.$m.'");
-              window.location.href = "../register.php"; // Redirect to the same page
-            });
-          </script>';
+  $_SESSION['error_message'] = "User Email already used! Please try using another.";
+  header('Location: ../register.php');
+  exit();
 
 } else {
     $quer = "INSERT INTO users(email_id,first_name,last_name,password) values('$email','$first','$last','$pass')";

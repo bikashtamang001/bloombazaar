@@ -44,6 +44,14 @@
                                 Welcome Back ! <br /> Please Sign in now
                             </h3>
                             <form class="row contact_form" action="scripts/login_script.php" method="post">
+                            <div class="col-md-12 my-2">
+                <?php
+    if (isset($_SESSION['error_message'])) {
+        echo '<p class="error-message">' . $_SESSION['error_message'] . '</p>';
+        unset($_SESSION['error_message']);  // Clear the error message after displaying
+    }
+    ?>
+
                                 <div class="col-md-12 form-group p_star">
                                     <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email Address" />
                                 </div>
