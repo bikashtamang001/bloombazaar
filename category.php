@@ -84,12 +84,7 @@ if ($result) {
                             <div class="single_product_menu">
                                 <p><span><?php echo $sum ?> </span> Product Found</p>
                             </div>
-                            <div class="single_product_menu d-flex">
-                                <h5>sort by :</h5>
-                                <select>
-                                    <option data-display="Recent">Recent</option>
-                                </select>
-                            </div>
+
 
                             <form action="search_results.php" method="GET" class="single_product_menu d-flex">
     <div class="input-group">
