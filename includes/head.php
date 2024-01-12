@@ -44,7 +44,7 @@
                                     <a class="nav-link" href="/bloom-bazaar">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="category.php">Products</a>
+                                    <a class="nav-link" href="product.php">Products</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>

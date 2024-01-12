@@ -103,40 +103,89 @@ if ($result) {
                         </div>
                     </div>
                 </div>
-                <?php
-                    // Get the category ID from the URL
-$categoryId = isset($_GET['id']) ? $_GET['id'] : null;
+                <div class="row align-items-center latest_product_inner">
 
-// Fetch category details from the database
-$categoryQuery = "SELECT title FROM categories WHERE id = $categoryId";
-$categoryResult = mysqli_query($con, $categoryQuery);
-$category = mysqli_fetch_assoc($categoryResult);
 
-// Display category name
-echo '<h2>' . $category['title'] . '</h2>';
 
-// Fetch and display items under the selected category
-// Modify this query according to your data structure
-$itemsQuery = "SELECT * FROM products WHERE category = $categoryId";
-$itemsResult = mysqli_query($con, $itemsQuery);
+                    <?php
+                    $results_per_page = 9; // Adjust the number of products per page as needed
 
-while ($item = mysqli_fetch_assoc($itemsResult)) {
-    echo '<div class="col-lg-4 col-sm-6">
+                    // Determine the current page
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
+
+                    // Calculate the starting index for the results on the current page
+                    $start_index = ($page - 1) * $results_per_page;
+
+                    // Update your query to limit the results based on pagination parameters
+                    $query = "SELECT * FROM `products` LIMIT $start_index, $results_per_page";
+
+                    $result = mysqli_query($con, $query);
+
+                    while ($row = mysqli_fetch_array($result)) {
+                        echo '<div class="col-lg-4 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/'.$item['image'].'" alt="Image not available" />
+                                        <img src="img/product/'.$row['image'].'" alt="Image not available" />
                                         <div class="single_product_text">
-                                            <h4>'. $item['title'] .'</h4>
-                                            <h3>Rs. '. $item['price'] .'</h3>';
-                                            if(!check_if_added_to_cart($item['id'])){
-                                            echo '<a href="scripts/cart_add.php?id='.$item['id'].'&qty=1" class="add_cart">+ add to cart</a>';
+                                            <h4>'. $row['title'] .'</h4>
+                                            <h3>Rs. '. $row['price'] .'</h3>';
+                                            if(!check_if_added_to_cart($row['id'])){
+                                            echo '<a href="scripts/cart_add.php?id='.$row['id'].'&qty=1" class="add_cart">+ add to cart</a>';
                                             } else {
-                                                echo '<a href="scripts/cart_add.php?id='.$item['id'].'&qty=1" class="add_cart" disabled>+ add to cart</a>';
+                                                echo '<a href="login.php" disabled>+ add to cart</a>';
                                             }
                                         
                                     echo ' </div>
                                     </div>
                                 </div>';
-}
+                    }
+                    ?>
+
+                    
+                
+                </div>
+                <?php
+                    // Count the total number of products (useful for pagination)
+                    $total_results = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `products`"));
+
+                    // Calculate the total number of pages
+                    $total_pages = ceil($total_results / $results_per_page);
+
+                    // Get the current page from the URL parameter, default to 1 if not set
+                    $current_page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+
+                    // Display pagination links
+                    echo '<div class="pagination">';
+
+                    // "First" button
+                    if ($current_page > 1) {
+                        echo '<a href="?page=1">&lt&lt</a>';
+                    }
+
+                    // "Previous" button
+                    if ($current_page > 1) {
+                        $prev_page = $current_page - 1;
+                        echo '<a href="?page=' . $prev_page . '">&lt</a>';
+                    }
+
+                    // Numbered pages
+                    for ($i = 1; $i <= $total_pages; $i++) {
+                        // Add a class to the current page link
+                        $class = ($i === $current_page) ? 'current' : '';
+                        echo '<a href="?page=' . $i . '" class="' . $class . '">' . $i . '</a>';
+                    }
+
+                    // "Next" button
+                    if ($current_page < $total_pages) {
+                        $next_page = $current_page + 1;
+                        echo '<a href="?page=' . $next_page . '">&gt</a>';
+                    }
+
+                    // "Last" button
+                    if ($current_page < $total_pages) {
+                        echo '<a href="?page=' . $total_pages . '">&gt&gt</a>';
+                    }
+
+                    echo '</div>';
                 ?>
 
             </div>
