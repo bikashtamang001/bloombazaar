@@ -4,7 +4,7 @@ require './includes/conn.php';
 require "./includes/head.php";
 
 if (!isset($_SESSION['email'])) {
-    echo "<script> location.href='/nursery_online'; </script>";
+    echo "<script> location.href='/bloom-bazaar'; </script>";
     exit();
 }
 ?>
@@ -160,7 +160,7 @@ $result = mysqli_query($con, $query);
                     </tbody>
                 </table>
                 <div class="checkout_btn_inner float-right">
-                    <a class="btn_1" href="/nursery_online">Continue Shopping</a>
+                    <a class="btn_1" href="/bloom-bazaar">Continue Shopping</a>
                     <a class="btn_1 checkout_btn_1" href="checkout.php">Proceed to checkout</a>
                 </div>
             </div>
@@ -174,44 +174,13 @@ $result = mysqli_query($con, $query);
 
 <script src="js/jquery-1.12.1.min.js"></script>
 
-<script src="js/popper.min.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
 
-<script src="js/jquery.magnific-popup.js"></script>
-
-<script src="js/swiper.min.js"></script>
-
-<script src="js/masonry.pkgd.js"></script>
-
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-
-<script src="js/slick.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/contact.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="js/jquery.form.js"></script>
-<script src="js/jquery.validate.min.js"></script>
-<script src="js/mail-script.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/price_rangs.js"></script>
+<
 
 <script src="js/custom.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-</script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7721ac216d593390","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2022.11.3","si":100}' crossorigin="anonymous"></script>
 </body>
 
 </html>

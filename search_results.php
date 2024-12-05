@@ -84,7 +84,12 @@ if ($result) {
                             <div class="single_product_menu">
                                 <p><span><?php echo $sum ?> </span> Product Found</p>
                             </div>
-
+                            <div class="single_product_menu d-flex">
+                                <h5>sort by :</h5>
+                                <select>
+                                    <option data-display="Recent">Recent</option>
+                                </select>
+                            </div>
 
                             <form action="search_results.php" method="GET" class="single_product_menu d-flex">
     <div class="input-group">
@@ -98,41 +103,47 @@ if ($result) {
                         </div>
                     </div>
                 </div>
+                <div class="row align-items-center latest_product_inner">
+
+
+
                 <?php
-                    // Get the category ID from the URL
-$categoryId = isset($_GET['id']) ? $_GET['id'] : null;
 
-// Fetch category details from the database
-$categoryQuery = "SELECT title FROM categories WHERE id = $categoryId";
-$categoryResult = mysqli_query($con, $categoryQuery);
-$category = mysqli_fetch_assoc($categoryResult);
 
-// Display category name
-echo '<h2>' . $category['title'] . '</h2>';
+// Get the search query from the form
+$searchQuery = isset($_GET['search_query']) ? $_GET['search_query'] : '';
 
-// Fetch and display items under the selected category
-// Modify this query according to your data structure
-$itemsQuery = "SELECT * FROM products WHERE category = $categoryId";
-$itemsResult = mysqli_query($con, $itemsQuery);
+// Query the database for products matching the search query
+$searchResultsQuery = "SELECT * FROM products WHERE title LIKE '%$searchQuery%'";
+$searchResultsResult = mysqli_query($con, $searchResultsQuery);
 
-while ($item = mysqli_fetch_assoc($itemsResult)) {
+// Display search results
+echo '<div class="search-results">';
+while ($product = mysqli_fetch_assoc($searchResultsResult)) {
+
     echo '<div class="col-lg-4 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="img/product/'.$item['image'].'" alt="Image not available" />
+                                        <img src="img/product/'.$product['image'].'" alt="Image not available" />
                                         <div class="single_product_text">
-                                            <h4>'. $item['title'] .'</h4>
-                                            <h3>Rs. '. $item['price'] .'</h3>';
-                                            if(!check_if_added_to_cart($item['id'])){
-                                            echo '<a href="scripts/cart_add.php?id='.$item['id'].'&qty=1" class="add_cart">+ add to cart</a>';
+                                            <h4>'. $product['title'] .'</h4>
+                                            <h3>Rs. '. $product['price'] .'</h3>';
+                                            if(!check_if_added_to_cart($product['id'])){
+                                            echo '<a href="scripts/cart_add.php?id='.$product['id'].'&qty=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>';
                                             } else {
-                                                echo '<a href="scripts/cart_add.php?id='.$item['id'].'&qty=1" class="add_cart" disabled>+ add to cart</a>';
+                                                echo '<a href="scripts/cart_add.php?id='.$product['id'].'&qty=1" class="add_cart" disabled>+ add to cart</a>';
                                             }
                                         
                                     echo ' </div>
                                     </div>
                                 </div>';
 }
-                ?>
+echo '</div>';
+?>
+
+                    
+                
+                </div>
+
 
             </div>
         </div>

@@ -12,13 +12,22 @@ $password=md5($password);
 $query="SELECT id,email,password from users where email='".$email."' and  password='".$password."'";
 $result=mysqli_query($con,$query);
 $num=mysqli_num_rows($result);
+
 if($num==0){
-    $m = "Please enter correct E-mail id and Password";
-    header('location: index.php?errorl='.$m);
-}else{
+  $_SESSION['error_message'] = "Please enter valid E-mail id and Password";
+    header('Location: ../login.php');
+    exit();
+
+
+    }
+else{
     $row = mysqli_fetch_array($result);
     $_SESSION['email'] = $row['email'];
     $_SESSION['user_id'] = $row['id'];
 
     header('location: ../index.php');
 }
+?>
+</body>
+
+</html> 

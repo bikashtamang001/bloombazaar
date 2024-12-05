@@ -4,7 +4,7 @@ require 'includes/conn.php';
 session_start();
 
 if(!isset($_SESSION['admin_email'])){
-    echo "<script> location.href='/nursery_online/admin/login.php'; </script>";
+    echo "<script> location.href='/bloom-bazaar/admin/login.php'; </script>";
     exit();
 }
 
@@ -46,7 +46,6 @@ if(!isset($_SESSION['admin_email'])){
                         <th scope="col">Name</th>
                         <th scope="col">Contact Number</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,9 +60,7 @@ if(!isset($_SESSION['admin_email'])){
                         echo "<th>" . $row['name'] . "</th>";
                         echo "<td>" . $row['mobile'] . "</td>";
                         echo "<td>" . $row['email']  . "</td>";
-                        echo "<td>
-                                <a href='scripts/delete_script.php?id={$row['id']}'><button type='button' class='btn btn-danger'>Delete</button></a>
-                            </td></tr>";
+
                     }
 
                     ?>

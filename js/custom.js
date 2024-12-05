@@ -46,7 +46,7 @@
       autoplayHoverPause: true,
       autoplayTimeout: 5000,
       nav: true,
-      navText: ["next", "previous"],
+      navText: ["Previous", "Next"],
       responsive: {
         0: {
           margin: 15,
@@ -83,7 +83,7 @@
       autoplayHoverPause: true,
       autoplayTimeout: 5000,
       nav: true,
-      navText: ["next", "previous"],
+      navText: ["Previous", "Next"],
       smartSpeed: 1000,
       responsive: {
         0: {
@@ -147,7 +147,7 @@
     autoplayHoverPause: true,
     autoplayTimeout: 5000,
     nav: true,
-    navText: ["next", "previous"],
+    navText: ["Previous", "Next"],
     smartSpeed: 1000,
     responsive: {
       0: {
@@ -215,14 +215,14 @@
 
 
   // Search Toggle
-  $("#search_input_box").hide();
-  $("#search_1").on("click", function () {
-    $("#search_input_box").slideToggle();
-    $("#search_input").focus();
-  });
-  $("#close_search").on("click", function () {
-    $('#search_input_box').slideUp(500);
-  });
+  // $("#search_input_box").hide();
+  // $("#search_1").on("click", function () {
+  //   $("#search_input_box").slideToggle();
+  //   $("#search_input").focus();
+  // });
+  // $("#close_search").on("click", function () {
+  //   $('#search_input_box').slideUp(500);
+  // });
 
   //------- Mailchimp js --------//  
   function mailChimp() {
@@ -234,7 +234,7 @@
   function makeTimer() {
 
     //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
-    var endTime = new Date("27 Sep 2019 12:56:00 GMT+01:00");
+    var endTime = new Date("27 Sep 2019 12:56:00 GMT+05:45");
     endTime = (Date.parse(endTime) / 1000);
 
     var now = new Date();

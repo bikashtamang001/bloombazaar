@@ -1,0 +1,34 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin-right: 5px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.pagination a.current {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+/* Style for first and last buttons */
+.pagination a:first-child,
+.pagination a:last-child {
+    margin-right: 10px;
+}
+
+/* Style for previous and next buttons */
+.pagination a:nth-child(2),
+.pagination a:nth-last-child(2) {
+    margin-right: 10px;
+}

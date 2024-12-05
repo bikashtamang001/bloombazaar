@@ -7,8 +7,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Shop freely</title>
+    <title>Bloom Bazaar</title>
     <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/pagination.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
@@ -19,8 +20,8 @@
     <link rel="stylesheet" href="css/themify-icons.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
     <link rel="stylesheet" href="css/slick.css" />
-    <link rel="stylesheet" href="css/price_rangs.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -30,8 +31,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="/nursery_online">
-                            Nursery Online 
+                        <a class="navbar-brand" href="/bloom-bazaar">
+                            Bloom Bazaar 
                             <!-- <img src="img/logo.png" alt="logo" /> -->
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,14 +41,18 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/nursery_online">Home</a>
+                                    <a class="nav-link" href="/bloom-bazaar">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="category.php">Products</a>
+                                    <a class="nav-link" href="product.php">Products</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about_us.php">About us</a>
+                                </li>
+
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
@@ -99,15 +104,6 @@
                         </div>
                     </nav>
                 </div>
-            </div>
-        </div>
-        <div class="search_input" id="search_input_box">
-            <div class="container">
-                <form class="d-flex justify-content-between search-inner">
-                    <input type="text" class="form-control" id="search_input" placeholder="Search Here" />
-                    <button type="submit" class="btn"></button>
-                    <span class="ti-close" id="close_search" title="Close Search"></span>
-                </form>
             </div>
         </div>
     </header>

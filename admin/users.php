@@ -5,7 +5,7 @@ require 'includes/conn.php';
 session_start();
 
 if(!isset($_SESSION['admin_email'])){
-    echo "<script> location.href='/nursery_online/admin/login.php'; </script>";
+    echo "<script> location.href='/bloom-bazaar/admin/login.php'; </script>";
     exit();
 }
 require "includes/header.php";
@@ -33,11 +33,7 @@ require "includes/header.php";
                         <th scope="col">Contact Number</th>
                         <th scope="col">Email</th>
                         <th scope="col">Action</th>
-                        <!-- <th scope="col">Specifications</th>
-                        <th scope="col">MRP</th>
-                        <th scope="col">Sale Price</th>
-                        <th scope="col">Color</th>
-                        <th scope="col">Storage</th> -->
+
                     </tr>
                 </thead>
                 <tbody>
@@ -53,8 +49,11 @@ require "includes/header.php";
                         echo "<td>" . $row['mobile'] . "</td>";
                         echo "<td>" . $row['email'] . "</td>";
                         echo "<td>
-                            <a href='scripts/delete_script_user.php?id={$row['id']}'><button type='button' class='btn btn-danger'>Delete</button></a>
-                        </td></tr>";
+        <a href='#' onclick='confirmDelete({$row['id']})'>
+            <button type='button' class='btn btn-danger'>Delete</button>
+        </a>
+      </td></tr>";
+
                     }
 
                     ?>
@@ -64,6 +63,15 @@ require "includes/header.php";
     </div>
 </div>
 
+<script>
+    function confirmDelete(id) {
+        var result = confirm("Are you sure you want to delete this user?");
+        if (result) {
+            // If the user clicks "OK" in the confirmation dialog, redirect to the delete script
+            window.location.href = 'scripts/delete_script_user.php?id=' + id;
+        }
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>

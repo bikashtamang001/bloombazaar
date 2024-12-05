@@ -6,7 +6,7 @@ require 'includes/conn.php';
 session_start();
 
 if(isset($_SESSION['admin_email'])){
-    echo "<script> location.href='/nursery_online/admin'; </script>";
+    echo "<script> location.href='/bloom-bazaar/admin'; </script>";
     exit();
 }
 
@@ -22,14 +22,21 @@ if(isset($_SESSION['admin_email'])){
 
         <div class="container col-md-3 my-4">
             <form class="row g-3" action="scripts/login_script.php" method="POST">
+
                 <div class="col-md-12">
-                    <label for="eamil" class="form-label">Email</label>
-                    <input type="text" name="email" class="form-control" id="email">
-                </div>
-                <div class="col-md-12">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                </div>
+                <?php
+    if (isset($_SESSION['error_message'])) {
+        echo '<p class="error-message">' . $_SESSION['error_message'] . '</p>';
+        unset($_SESSION['error_message']);  // Clear the error message after displaying
+    }
+    ?>
+                <label for="email" class="form-label mx-1">Email</label>
+                                    <input type="email" class="form-control" required id="email" name="email" value="" placeholder="Email Address" />
+                                </div>
+                                <div class="col-md-12">
+                                <label for="password" class="form-label mx-1">Password</label>
+                                    <input type="password" class="form-control" required id="password" name="password" value="" placeholder="Password" />
+                                </div>
 
                 <div class="col-12">
                     <button type="submit" class="btn btn-primary">Submit</button>
